@@ -7,3 +7,8 @@ Categoria: {{ producto.categoria }}
 Cantidad: {{ producto.cantidad }}
 <br>
 Precio: {{ producto.precio }}
+<br>
+<a href="{%url 'productos:nuevo' %}">Nuevo</a>
+<a href="{%url 'productos:editar' producto.id %}">Modificar</a>
+<a href="{%url 'productos:agregar' producto.id %}">Agregar</a>
+<a href="{%url 'productos:quitar' producto.id %}">Quitar</a>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nuevo Producto</title>
+</head>
+<body>
+	<form action="{% url 'productos:guardar' %}" method="post">
+		
+		{% csrf_token %}
+		Nooombre del Producto:
+		<input type="text" name="nombre">
+
+
+		<input type="submit" value="Guardar">
+
+	</form>
+</body>
+</html>

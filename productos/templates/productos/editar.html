@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nuevo Producto</title>
+</head>
+<body>
+	<form action="{% url 'productos:editar' producto.id %}" method="post">
+		
+		{% csrf_token %}
+
+		<input type="hidden" name="pk" value="{{ producto.id }}">
+		Nombre del Producto:
+		<input type="text" name="nombre" value="{{ producto.nombre }}">
+
+
+		<input type="submit" value="Guardar">
+
+	</form>
+</body>
+</html>
