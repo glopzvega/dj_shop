@@ -4,10 +4,21 @@ from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
-
+from django.views import generic
 # Create your views here.
 
 from models import Producto
+
+class IndexView(generic.ListView):
+    template_name = "productos/index.html"
+    context_object_name = "productos"
+    
+    def get_queryset(self):
+        return Producto.objects.all()
+    
+class DetailView(generic.DetailView):
+    model = Producto
+    template_name = "productos/detail.html"
 
 def index(request):
     productos = Producto.objects.all()
